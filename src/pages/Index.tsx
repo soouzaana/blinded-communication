@@ -236,7 +236,7 @@ const Index = () => {
           >
             <PrimaryCTA size="lg">Garantir minha vaga agora</PrimaryCTA>
             <p className="mt-6 text-sm text-muted-foreground">
-              Associados da ACI possuem <span className="text-primary font-semibold">50% de desconto</span> · Investimento promocional R$ 299,99
+              Associados da ACECS possuem <span className="text-primary font-semibold">50% de desconto</span> · Investimento promocional R$ 299,99
             </p>
           </motion.div>
         </div>
@@ -313,10 +313,9 @@ const Index = () => {
                 Ignacio <span className="text-primary">Vilhagra</span>
               </h2>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed mb-5">
-                Mentor, palestrante e especialista em <span className="text-primary font-semibold">comunicação, vendas, negociação e autoridade profissional</span>. Com quase três décadas de experiência no mercado e mais de 70 mil profissionais treinados, Ignacio criou o que ele considera o treinamento mais disruptivo de toda a sua carreira.              </p>
+                Treinador, mentor, teólogo e consultor empresarial, com quase três décadas de experiência em  <span className="text-primary font-semibold">vendas, negociação, comportamento e liderança</span>. Ao longo da carreira, já impactou mais de 70 mil pessoas por meio de treinamentos, mentorias, workshops e conferências.</p>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed mb-8">
-                Sua metodologia transforma a forma como profissionais se comunicam, negociam e se posicionam. Este evento é inédito e foi desenhado para quem está pronto para operar em um nível completamente diferente.             
-              </p>
+Especialista em mentalidade, PNL, comunicação e vendas, Ignácio desenvolveu uma metodologia prática que une desenvolvimento humano e estratégias comerciais, gerando resultados rápidos e consistentes. Seu trabalho é marcado por inovação, alta performance e pelo princípio de “vendas e atendimento com o coração”.              </p>
               <div className="grid grid-cols-2 gap-4">
                 {stats.map((s, i) => (
                   <div
@@ -526,7 +525,7 @@ const Index = () => {
               <div className="inline-flex items-center gap-2 rounded-full bg-primary/15 border border-primary/40 px-4 py-2 mb-6">
                 <Sparkles className="w-4 h-4 text-primary" />
                 <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-primary">
-                  50% OFF para Associados ACI
+                  50% OFF para Associados ACECS
                 </span>
               </div>
 
@@ -716,7 +715,19 @@ const Index = () => {
               © {new Date().getFullYear()} Comunicação Blindada · Ignacio Vilhagra. Todos os direitos reservados.
             </p>
             <p className="text-xs text-muted-foreground">
-              Apoio institucional: <span className="text-primary font-semibold">Associação Comercial Industrial</span>
+              Apoio institucional: <span className="text-primary font-semibold">Associação Comercial Industrial de Cruzeiro do Sul</span>
+            </p>
+
+           <p className="text-xs text-muted-foreground flex items-center gap-2">
+              Desenvolvido por{" "}
+              <a
+                href="https://instagram.com/domaagency"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+              >
+                DOMMA Agency
+              </a>
             </p>
           </div>
         </div>
