@@ -24,6 +24,7 @@ import {
   Mail,
   Phone,
   Sparkles,
+  Instagram,
 } from "lucide-react";
 import speakerImg from "@/assets/ignacio-vilhagra.png";
 import stageBg from "@/assets/stage-bg.jpg";
@@ -37,7 +38,7 @@ const fadeUp = {
 };
 
 const SectionDivider = () => (
-  <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent" />
+  <div className="absolute -top-6 left-1/2 -translate-x-1/2 h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent" />
 );
 
 const PrimaryCTA = ({
@@ -114,21 +115,21 @@ const Index = () => {
   ];
 
   const beforeItems = [
-    "Trava na hora de falar e perde o cliente",
-    "Aceita qualquer condição com medo de perder",
-    "Cobra menos do que vale por insegurança",
-    "É interrompido e ignorado em reuniões",
-    "Fica em silêncio quando precisa se impor",
-    "Vê outros menos preparados ocupando seu espaço",
+    "Trava na hora de falar em público ou negociar",
+    "Perde vendas por não saber se posicionar",
+    "Sente medo de cobrar o que realmente vale",
+    "Não consegue impor autoridade em reuniões",
+    "Depende de preço baixo para fechar negócios",
+    "Comunica sem impacto e sem confiança",
   ];
 
   const afterItems = [
-    "Fala com firmeza e o cliente escuta até o fim",
-    "Negocia de igual para igual em qualquer mesa",
-    "Cobra o que merece e o cliente fecha",
-    "Toma a palavra e a sala silencia",
-    "Impõe presença antes mesmo de falar",
-    "Vira referência no próprio mercado",
+    "Fala com autoridade absoluta em qualquer cenário",
+    "Fecha vendas mesmo quando o cliente resiste",
+    "Cobra seu valor real com segurança total",
+    "Domina qualquer sala e qualquer negociação",
+    "Vende pelo valor, não pelo preço",
+    "Comunica com poder, clareza e persuasão",
   ];
 
   const includes = [
@@ -187,7 +188,7 @@ const Index = () => {
             animate="show"
             variants={fadeUp}
             transition={{ delay: 0.2 }}
-            className="font-heading italic text-lg md:text-2xl text-foreground/70 max-w-3xl mx-auto mb-2"
+            className="text-lg md:text-1xl text-foreground/70 max-w-3xl mx-auto mb-2"
           >
             Mentalidade de atirador de elite para quem não aceita mais vender com medo.
           </motion.p>
@@ -197,9 +198,9 @@ const Index = () => {
             animate="show"
             variants={fadeUp}
             transition={{ delay: 0.3 }}
-            className="text-xs md:text-sm uppercase tracking-widest font-semibold text-primary mb-12"
+            className="text-xs md:text-sm uppercase tracking-widest font-normal text-primary mb-12"
           >
-            com Ignacio Vilhagra
+            com <span className="font-bold">Ignacio Vilhagra</span>
           </motion.p>
 
           <motion.div
@@ -306,18 +307,16 @@ const Index = () => {
               transition={{ duration: 0.7, delay: 0.1 }}
             >
               <p className="text-xs uppercase tracking-widest font-semibold text-primary mb-4">
-                O Mentor
+                Conheça o Especialista
               </p>
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
                 Ignacio <span className="text-primary">Vilhagra</span>
               </h2>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed mb-5">
-                Mentor, palestrante e especialista em comunicação, vendas, negociação e autoridade profissional. Construiu uma carreira sólida treinando líderes, empresários e profissionais que decidiram parar de pedir oportunidade e começar a ditar as regras.
-              </p>
+                Mentor, palestrante e especialista em <span className="text-primary font-semibold">comunicação, vendas, negociação e autoridade profissional</span>. Com quase três décadas de experiência no mercado e mais de 70 mil profissionais treinados, Ignacio criou o que ele considera o treinamento mais disruptivo de toda a sua carreira.              </p>
               <p className="text-base md:text-lg text-foreground/70 leading-relaxed mb-8">
-                Comunicação Blindada é considerado o treinamento mais <span className="text-primary font-semibold">disruptivo</span> já criado por ele. Não é teoria. É um ponto de ruptura para quem está cansado de vender com medo.
+                Sua metodologia transforma a forma como profissionais se comunicam, negociam e se posicionam. Este evento é inédito e foi desenhado para quem está pronto para operar em um nível completamente diferente.             
               </p>
-
               <div className="grid grid-cols-2 gap-4">
                 {stats.map((s, i) => (
                   <div
@@ -385,9 +384,9 @@ const Index = () => {
               A Transformação
             </p>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              De quem pede oportunidade
+              A diferença entre quem <span className="text-primary">pede oportunidade</span>
               <br />
-              <span className="text-primary">para quem dita as regras.</span>
+              e quem <span className="text-primary">dita as regras</span> do jogo
             </h2>
           </div>
 
@@ -497,7 +496,7 @@ const Index = () => {
               A Oportunidade
             </p>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              Sua vaga no <span className="text-primary">Comunicação Blindada</span>
+             Invista no seu <span className="text-primary">próximo nível</span>
             </h2>
           </div>
 
@@ -601,46 +600,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ============= 9. VIDEO ============= */}
-      <section className="relative py-20 md:py-28 px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14 relative">
-            <SectionDivider />
-            <p className="text-xs uppercase tracking-widest font-semibold text-primary mb-4 mt-3">
-              Assista
-            </p>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              Veja o que te espera <span className="text-primary">no palco.</span>
-            </h2>
-          </div>
-
-          <div className="relative rounded-2xl border border-primary/20 aspect-video overflow-hidden bg-card group cursor-pointer shadow-2xl shadow-primary/10">
-            <img
-              src={stageBg}
-              alt=""
-              className="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-500"
-              loading="lazy"
-              width={1920}
-              height={1080}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary/90 hover:bg-primary backdrop-blur-sm flex items-center justify-center shadow-2xl shadow-primary/40 mb-6 transition-colors"
-                aria-label="Reproduzir vídeo de apresentação"
-              >
-                <Play className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground ml-1" fill="currentColor" />
-              </motion.button>
-              <p className="text-sm md:text-base text-foreground/80 uppercase tracking-widest font-semibold">
-                Clique para assistir
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ============= 10. CLOSING ============= */}
       <section className="relative py-20 md:py-32 px-4 sm:px-6 overflow-hidden">
         <div className="absolute inset-0">
@@ -707,7 +666,7 @@ const Index = () => {
                 COMUNICAÇÃO <span className="text-primary">BLINDADA</span>
               </h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Mentoria presencial e imersão intensiva com Ignacio Vilhagra. Para quem decidiu liderar com a palavra.
+                Mentoria presencial com Ignacio Vilhagra. O treinamento mais disruptivo já criado para profissionais que desejam dominar a comunicação e as vendas.
               </p>
             </div>
 
@@ -736,13 +695,17 @@ const Index = () => {
                 Contato
               </p>
               <ul className="space-y-3 text-sm text-muted-foreground">
+
                 <li className="flex items-start gap-2">
-                  <Mail className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                  <span>contato@comunicacaoblindada.com.br</span>
+                  <Instagram className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                  <a href="https://www.instagram.com/ignaciovilhagra/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                    @ignaciovilhagra
+                  </a>
                 </li>
+
                 <li className="flex items-start gap-2">
                   <Phone className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                  <span>(68) 0000-0000</span>
+                  <span>(69) 99975-7176</span>
                 </li>
               </ul>
             </div>
