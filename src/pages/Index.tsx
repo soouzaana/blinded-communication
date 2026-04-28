@@ -27,7 +27,8 @@ import {
   Instagram,
 } from "lucide-react";
 import speakerImg from "@/assets/ignacio-vilhagra.jpeg";
-import stageBg from "@/assets/stage-bg.jpg";
+import stageBg from "@/assets/stage-bg.jpeg";
+import heroPerson from "@/assets/hero-person.png";
 
 // Edit this to point to the external checkout
 const CHECKOUT_URL = "https://pay.kiwify.com.br/M3CRI0X";
@@ -143,104 +144,145 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
-      {/* ============= 1. HERO ============= */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 md:py-32 px-4 sm:px-6">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <img
-            src={stageBg}
-            alt=""
-            className="w-full h-full object-cover opacity-30"
-            width={1920}
-            height={1080}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-background" />
+{/* ============= 1. HERO ============= */}
+<section className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 md:py-32 px-4 sm:px-6 bg-background">
+
+  {/* BACKGROUND BASE (UNIFICADO) */}
+  <div className="absolute inset-0">
+    <img
+      src={stageBg}
+      alt=""
+      className="w-full h-full object-cover opacity-100 scale-105"
+      width={1920}
+      height={1080}
+    />
+
+    {/* UM ÚNICO GRADIENTE GLOBAL (remove conflito esquerda/direita) */}
+    <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background" />
+    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/80" />
+  </div>
+
+    {/* glow único (mais suave e integrado) */}
+    <div className="absolute right-[12%] w-[400px] h-[400px] bg-primary/35 blur-[80px] rounded-full" />
+  {/* SPEAKER (direita) */}
+  <div className="absolute right-[8%] bottom-0 h-full w-full lg:w-[48%] hidden lg:block z-10">
+
+
+    {/* imagem */}
+    <img
+      src={heroPerson}
+      alt="Ignacio Vilhagra"
+      className="h-full w-full object-contain object-right-bottom drop-shadow-2xl brightness-110 contrast-110"
+    />
+
+
+    {/* CTA (agora integrado visualmente ao palco, não “caixa separada”) */}
+    <div className="absolute bottom-10 right-3 z-20">
+
+      <div className="
+        relative overflow-hidden
+        backdrop-blur-md
+        bg-black/20
+        border border-white/10
+        rounded-2xl
+        px-5 py-4
+        shadow-2xl
+      ">
+
+        {/* glow interno consistente com o resto da hero */}
+        <div className="absolute -top-10 -left-10 w-44 h-44 bg-primary/20 blur-3xl rounded-full" />
+
+        <PrimaryCTA size="lg" className="w-full relative z-10">
+          Garantir minha vaga agora
+        </PrimaryCTA>
+
+        <p className="mt-3 text-[11px] text-center text-white/70 relative z-10">
+          Associados ACECS têm{" "}
+          <span className="text-primary font-semibold">50% de desconto</span> · R$ 299,99
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  {/* CONTENT (esquerda) */}
+  <div className="relative z-20 max-w-6xl mx-auto text-center lg:text-left lg:pr-[40%]">
+
+    {/* badge */}
+    <motion.div
+      initial="hidden"
+      animate="show"
+      variants={fadeUp}
+      className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-black/20 backdrop-blur-sm px-5 py-2 mb-8"
+    >
+      <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+      <span className="text-xs uppercase tracking-widest font-semibold text-primary">
+        Evento Inédito · Cruzeiro do Sul · AC
+      </span>
+    </motion.div>
+
+    {/* título */}
+    <motion.h1
+      initial="hidden"
+      animate="show"
+      variants={fadeUp}
+      transition={{ delay: 0.1 }}
+      className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-4"
+    >
+      COMUNICAÇÃO
+      <br />
+      <span className="text-primary">BLINDADA</span>
+    </motion.h1>
+
+    {/* subtítulo */}
+    <motion.p
+      initial="hidden"
+      animate="show"
+      variants={fadeUp}
+      transition={{ delay: 0.2 }}
+      className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto lg:mx-0 mb-2"
+    >
+      Mentalidade de atirador de elite para quem não aceita mais vender com medo.
+    </motion.p>
+
+    <motion.p
+      initial="hidden"
+      animate="show"
+      variants={fadeUp}
+      transition={{ delay: 0.3 }}
+      className="text-xs md:text-sm uppercase tracking-widest font-normal text-primary mb-12"
+    >
+      com <span className="font-bold">Ignacio Vilhagra</span>
+    </motion.p>
+
+    {/* info pills */}
+    <motion.div
+      initial="hidden"
+      animate="show"
+      variants={fadeUp}
+      transition={{ delay: 0.4 }}
+      className="flex flex-wrap justify-center lg:justify-start gap-3 md:gap-4"
+    >
+      {[
+        { icon: Calendar, label: "06 de Maio" },
+        { icon: Clock, label: "19h30 Check-in" },
+        { icon: MapPin, label: "Teatro dos Náuas" },
+        { icon: Flame, label: "Vagas Limitadas" },
+      ].map((p, i) => (
+        <div
+          key={i}
+          className="inline-flex items-center gap-2 rounded-full border border-border/40 bg-black/20 backdrop-blur-sm px-4 py-2"
+        >
+          <p.icon className="w-4 h-4 text-primary" />
+          <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-foreground/90">
+            {p.label}
+          </span>
         </div>
+      ))}
+    </motion.div>
 
-        <div className="relative z-10 max-w-6xl mx-auto text-center">
-          <motion.div
-            initial="hidden"
-            animate="show"
-            variants={fadeUp}
-            className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-secondary/30 backdrop-blur-sm px-5 py-2 mb-8"
-          >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs uppercase tracking-widest font-semibold text-primary">
-              Evento Inédito · Cruzeiro do Sul · AC
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial="hidden"
-            animate="show"
-            variants={fadeUp}
-            transition={{ delay: 0.1 }}
-            className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-4"
-          >
-            COMUNICAÇÃO
-            <br />
-            <span className="text-primary">BLINDADA</span>
-          </motion.h1>
-
-          <motion.p
-            initial="hidden"
-            animate="show"
-            variants={fadeUp}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-1xl text-foreground/70 max-w-3xl mx-auto mb-2"
-          >
-            Mentalidade de atirador de elite para quem não aceita mais vender com medo.
-          </motion.p>
-
-          <motion.p
-            initial="hidden"
-            animate="show"
-            variants={fadeUp}
-            transition={{ delay: 0.3 }}
-            className="text-xs md:text-sm uppercase tracking-widest font-normal text-primary mb-12"
-          >
-            com <span className="font-bold">Ignacio Vilhagra</span>
-          </motion.p>
-
-          <motion.div
-            initial="hidden"
-            animate="show"
-            variants={fadeUp}
-            transition={{ delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-3 md:gap-4 mb-12"
-          >
-            {[
-              { icon: Calendar, label: "06 de Maio" },
-              { icon: Clock, label: "19h30 Check-in" },
-              { icon: MapPin, label: "Teatro dos Náuas" },
-              { icon: Flame, label: "Vagas Limitadas" },
-            ].map((p, i) => (
-              <div
-                key={i}
-                className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-secondary/40 backdrop-blur-sm px-4 py-2"
-              >
-                <p.icon className="w-4 h-4 text-primary" />
-                <span className="text-xs md:text-sm font-semibold uppercase tracking-wider text-foreground/90">
-                  {p.label}
-                </span>
-              </div>
-            ))}
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            animate="show"
-            variants={fadeUp}
-            transition={{ delay: 0.5 }}
-          >
-            <PrimaryCTA size="lg">Garantir minha vaga agora</PrimaryCTA>
-            <p className="mt-6 text-sm text-muted-foreground">
-              Associados da ACECS possuem <span className="text-primary font-semibold">50% de desconto</span> · Investimento promocional R$ 299,99
-            </p>
-          </motion.div>
-        </div>
-      </section>
+  </div>
+</section>
 
       {/* ============= 2. PAIN / CONFRONTATION ============= */}
       <section className="relative py-20 md:py-28 px-4 sm:px-6 bg-gradient-to-b from-background via-secondary/20 to-background">
@@ -536,7 +578,7 @@ Especialista em mentalidade, PNL, comunicação e vendas, Ignácio desenvolveu u
                 R$ 299,99
               </div>
               <p className="text-sm text-muted-foreground mb-8">
-                à vista · pagamento único · acesso garantido
+                pagamento único · acesso garantido
               </p>
 
               <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8" />
