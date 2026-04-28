@@ -26,11 +26,11 @@ import {
   Sparkles,
   Instagram,
 } from "lucide-react";
-import speakerImg from "@/assets/ignacio-vilhagra.png";
+import speakerImg from "@/assets/ignacio-vilhagra.jpeg";
 import stageBg from "@/assets/stage-bg.jpg";
 
 // Edit this to point to the external checkout
-const CHECKOUT_URL = "#checkout";
+const CHECKOUT_URL = "https://pay.kiwify.com.br/M3CRI0X";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
