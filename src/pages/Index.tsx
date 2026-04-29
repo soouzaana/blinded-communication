@@ -145,7 +145,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
 {/* ============= 1. HERO ============= */}
-<section className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 md:py-32 px-4 sm:px-6 bg-background">
+<section className="
+  relative min-h-screen
+  flex flex-col lg:flex-row
+  items-center justify-center
+  overflow-hidden
+  py-24 md:py-32
+  px-4 sm:px-6
+  bg-background
+">
 
   {/* BACKGROUND BASE (UNIFICADO) */}
   <div className="absolute inset-0">
@@ -163,50 +171,159 @@ const Index = () => {
   </div>
 
     {/* glow único (mais suave e integrado) */}
-    <div className="absolute right-[12%] w-[400px] h-[400px] bg-primary/35 blur-[80px] rounded-full" />
+    <div className="absolute bottom-[20%] lg:bottom-[25%] lg:right-[12%] w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] bg-primary/55 blur-[80px] rounded-full" />
   {/* SPEAKER (direita) */}
-  <div className="absolute right-[8%] bottom-0 h-full w-full lg:w-[48%] hidden lg:block z-10">
+<div className="
+  relative
+  w-full
+  mt-10
+  order-2
+  lg:absolute lg:right-[8%] lg:bottom-0 lg:h-full lg:w-[48%] lg:order-none
+  z-10
+">
 
 
     {/* imagem */}
     <img
-      src={heroPerson}
-      alt="Ignacio Vilhagra"
-      className="h-full w-full object-contain object-right-bottom drop-shadow-2xl brightness-110 contrast-110"
-    />
+  src={heroPerson}
+  alt="Ignacio Vilhagra"
+  className="
+    w-full
+    max-h-[420px]
+    object-contain
+    object-bottom
+    mx-auto
+    lg:h-full lg:max-h-none lg:object-right-bottom
+  "
+/>
 
 
     {/* CTA (agora integrado visualmente ao palco, não “caixa separada”) */}
-    <div className="absolute bottom-10 right-3 z-20">
+{/* CTA (grudado na imagem no mobile + tablet) */}
+<div
+  className="
+    relative
+    w-full
 
-      <div className="
-        relative overflow-hidden
-        backdrop-blur-md
-        bg-black/20
-        border border-white/10
-        rounded-2xl
-        px-5 py-4
-        shadow-2xl
-      ">
+    -mt-16
+    sm:-mt-20
+    md:-mt-24
+    lg:mt-0
 
-        {/* glow interno consistente com o resto da hero */}
-        <div className="absolute -top-10 -left-10 w-44 h-44 bg-primary/20 blur-3xl rounded-full" />
+    flex
+    justify-center
 
-        <PrimaryCTA size="lg" className="w-full relative z-10">
-          Garantir minha vaga agora
-        </PrimaryCTA>
+    lg:absolute
+    lg:bottom-10
+    lg:right-3
+    lg:w-auto
+    lg:justify-end
 
-        <p className="mt-3 text-[11px] text-center text-white/70 relative z-10">
-          Associados ACECS têm{" "}
-          <span className="text-primary font-semibold">50% de desconto</span> · R$ 299,99
-        </p>
+    z-20
+  "
+>
+  <div
+    className="
+      relative
+      overflow-hidden
+      backdrop-blur-md
+      bg-black/20
+      border border-white/10
+      rounded-2xl
+      shadow-2xl
 
-      </div>
-    </div>
+      w-full
+      max-w-[520px]
+
+      px-4 py-4
+      sm:px-5 sm:py-1
+      md:px-6 md:py-5
+    "
+  >
+    {/* glow */}
+    <div
+      className="
+        absolute
+        -top-10
+        -left-10
+        w-44
+        h-44
+        bg-primary/20
+        blur-3xl
+        rounded-full
+        pointer-events-none
+      "
+    />
+
+    {/* botão */}
+    <a
+      href="https://pay.kiwify.com.br/M3CRI0X"
+      className="
+        inline-flex
+        items-center
+        justify-center
+        gap-3
+
+        w-full
+
+        rounded-xl
+        bg-primary
+        text-primary-foreground
+
+        font-bold
+        uppercase
+        tracking-wider
+
+        shadow-lg
+        shadow-primary/30
+        hover:shadow-xl
+        hover:shadow-primary/40
+
+        transition-all
+        duration-300
+
+        px-6 py-5
+        sm:px-8 sm:py-6
+        md:px-10
+
+        text-sm
+        sm:text-base
+        md:text-lg
+
+        relative
+        z-10
+      "
+    >
+      Garantir minha vaga agora
+
+      <ArrowRight className="w-5 h-5 shrink-0" />
+    </a>
+
+    {/* texto */}
+    <p
+      className="
+        mt-3
+        text-[11px]
+        sm:text-xs
+        text-center
+        text-white/70
+        relative
+        z-10
+        leading-relaxed
+      "
+    >
+      Associados ACECS têm{" "}
+      <span className="text-primary font-semibold">
+        50% de desconto
+      </span>{" "}
+      · R$ 299,99
+    </p>
+  </div>
+</div>
   </div>
 
   {/* CONTENT (esquerda) */}
-  <div className="relative z-20 max-w-6xl mx-auto text-center lg:text-left lg:pr-[40%]">
+  <div className="relative z-20 max-w-6xl mx-auto text-center lg:text-left lg:pr-[40%] pr-0">
 
     {/* badge */}
     <motion.div
@@ -227,7 +344,7 @@ const Index = () => {
       animate="show"
       variants={fadeUp}
       transition={{ delay: 0.1 }}
-      className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-4"
+      className="font-heading text-4xl sm:text-5xl md:text-5xl lg:text-8xl font-bold leading-[1.05] mb-4 md:px-3"
     >
       COMUNICAÇÃO
       <br />
