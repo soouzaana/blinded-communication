@@ -1,8 +1,16 @@
 # Comunicação Blindada — Landing Page Oficial
 
+![Preview do site](src/assets/preview.png)
+
 Landing page desenvolvida para o evento presencial **Comunicação Blindada**, uma mentoria intensiva com foco em comunicação, oratória, negociação e autoridade profissional, conduzida por **Ignacio Vilhagra**.
 
 O projeto foi criado com foco total em conversão, utilizando uma estrutura estratégica de vendas, design premium e uma experiência visual sofisticada para direcionar o visitante ao checkout de pagamento do evento.
+
+---
+
+## 🔗 Acesso ao Site
+
+👉 https://comunicacaoblindada.com/
 
 ---
 
